@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="">
       <h1 className=" ">Welcome to the second hands store</h1>
       <p className="">
-        
+         hung branch
       </p>
       <Link href="/">
         <button className="">
