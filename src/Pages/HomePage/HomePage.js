@@ -1,17 +1,8 @@
-import Link from "next/link";
+import React from "react";
+import Product from '../../Components/Product'
 
 export default function HomePage() {
   return (
-    <div className="container">
-      <h1 className="text-7xl font-bold">Welcome to the second hands store</h1>
-      <p className="">
-         hung branch
-      </p>
-      <Link href="/">
-        <button className="p-3 bg-blue-600 text-white text-xl rounded-md shadow-lg shadow-blue-500/50 hover:shadow-cyan-500/50">
-          Shop Now
-        </button>
-      </Link>
-    </div>
-  );
+    <Product/>
+  )
 }

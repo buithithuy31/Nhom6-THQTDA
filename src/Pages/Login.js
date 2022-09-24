@@ -1,34 +1,46 @@
-import Link from "next/link";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 
-const Login = () => {
+export const Login = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
   return (
-    <div className="flex flex-col justify-center items-center min-h-full-remove-nav">
-      <div className="min-w-[500px] border-2 p-10">
-        <h2 className="text-center text-2xl font-bold">Sign In now !!!</h2>
-        <div className="flex flex-col mt-5">
-          <input
-            type="text"
-            placeholder="username"
-            className="p-3 border-2 border-gray-300"
-          />
-          <input
-            type="password"
-            placeholder="password"
-            className="p-3 border-2 border-gray-300 mt-5"
-          />
-          <button className="p-3 pl-5 pr-5 mt-5 text-xl rounded-md border-2 border-cyan-500 hover:shadow-cyan-500/50">
-            Sign In
-          </button>
-          <div className="text-center font-bold">Or</div>
-          <Link href="/Register">
-            <button className="p-3 pl-5 pr-5 mt-5 text-xl rounded-md border-2 border-orange-700 hover:shadow-cyan-500/50">
-              Register
-            </button>
+    <Container>
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <h3 className='text-center py-3 heading fw-bold py-3 my-0 pt-5'>
+            Login
+          </h3>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className='mb-3'>
+              <Form.Label>Username</Form.Label>
+              <Form.Control placeholder='Enter email' />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control placeholder='Enter password' />
+            </Form.Group>
+            <div className='d-grid'>
+              <Button type='submit' class='btn' variant='dark'>
+                Login
+              </Button>
+            </div>
+          </Form>
+        </Col>
+      </Row>
+      <Row className='py-3 text-center' style={{ fontSize: '14px' }}>
+        <Col>
+          Forgot Password?
+          <Link
+            className='text-decoration-none text-primary ms-2 fw-bold'
+            to={'/register'}
+          >
+            Register
           </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Login;
+        </Col>
+      </Row>
+    </Container>
+  )
+}
