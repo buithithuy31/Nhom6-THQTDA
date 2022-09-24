@@ -6,7 +6,8 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import Header from "./Components/Header";
-import "react-loading-skeleton/dist/skeleton.css";
+// import "react-loading-skeleton/dist/skeleton.css";
+import "react-loading-skeleton"
 
 
 function App() {
@@ -19,7 +20,6 @@ function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
         </Routes>
       </Container> */}
     </>
