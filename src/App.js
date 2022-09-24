@@ -1,6 +1,5 @@
-import "./App.css";
-import HomePage from "./Pages/HomePage/HomePage";
-import ProductPage from "./Pages/ProductPage/ProductPage";
+import HomePage from "./Pages/HomePage";
+import ProductPage from "./Pages/ProductPage";
 import {Login} from './Pages/Login'
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
@@ -9,10 +8,14 @@ import Header from "./Components/Header";
 import "react-loading-skeleton/dist/skeleton.css";
 
 
+
 function App() {
   return (
     <>
-      <Header/>
+    <div>
+    <Login/>
+    </div>
+      {/* <Header/> */}
       {/* <Container fluid className="p-0" style={{ marginTop: "80px" }}>
         <Routes>
           <Route index path="/" element={<HomePage />} />
@@ -22,8 +25,10 @@ function App() {
 
         </Routes>
       </Container> */}
+      
     </>
   );
 }
 
 export default App;
+
