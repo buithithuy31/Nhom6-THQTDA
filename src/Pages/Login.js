@@ -1,13 +1,46 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 
-function Login() {
+export const Login = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
   return (
-    <div>Login
-      <div>
-        
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <h3 className='text-center py-3 heading fw-bold py-3 my-0 pt-5'>
+            Login
+          </h3>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className='mb-3'>
+              <Form.Label>Username</Form.Label>
+              <Form.Control placeholder='Enter email' />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control placeholder='Enter password' />
+            </Form.Group>
+            <div className='d-grid'>
+              <Button type='submit' class='btn' variant='dark'>
+                Login
+              </Button>
+            </div>
+          </Form>
+        </Col>
+      </Row>
+      <Row className='py-3 text-center' style={{ fontSize: '14px' }}>
+        <Col>
+          Forgot Password?
+          <Link
+            className='text-decoration-none text-primary ms-2 fw-bold'
+            to={'/register'}
+          >
+            Register
+          </Link>
+        </Col>
+      </Row>
+    </Container>
   )
 }
-
-export default Login

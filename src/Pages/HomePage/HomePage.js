@@ -1,17 +1,8 @@
-import Link from "next/link";
+import React from "react";
+import Product from '../../Components/Product'
 
 export default function HomePage() {
   return (
-    <div className="">
-      <h1 className=" ">Welcome to the second hands store</h1>
-      <p className="">
-         hung branch
-      </p>
-      <Link href="/">
-        <button className="">
-          Shop Now
-        </button>
-      </Link>
-    </div>
-  );
+    <Product/>
+  )
 }
