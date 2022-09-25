@@ -4,7 +4,7 @@ import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton'
 
-import { cartActions } from '../redux/reducer/cartSlice'
+import  cartActions  from '../redux/reducer/cartActions'
 
 const ProductPage = () => {
   const { id } = useParams()
