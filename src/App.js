@@ -1,7 +1,7 @@
 import HomePage from "./Pages/HomePage";
 import ProductPage from "./Pages/ProductPage";
 import {Login} from './Pages/Login'
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import Header from "./Components/Header";
@@ -15,8 +15,9 @@ function App() {
     <>
     <div>
     <Login/>
+    <h1>hihihih</h1>
     </div>
-      {/* <Header/> */}
+      <Header/>
       {/* <Container fluid className="p-0" style={{ marginTop: "80px" }}>
         <Routes>
           <Route index path="/" element={<HomePage />} />
