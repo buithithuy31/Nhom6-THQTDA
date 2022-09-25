@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import Header from "./Components/Header";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import React from "react";
 
 function App() {
   return (
