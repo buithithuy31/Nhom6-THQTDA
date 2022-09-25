@@ -5,15 +5,10 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import Header from "./Components/Header";
-<<<<<<< HEAD
-import "react-loading-skeleton/dist/skeleton.css";
-import React from "react";
-=======
 // import "react-loading-skeleton/dist/skeleton.css";
 import "react-loading-skeleton"
 
 
->>>>>>> main
 
 function App() {
   return (
