@@ -9,7 +9,7 @@ import Header from "./Components/Header";
 import "react-loading-skeleton"
 import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
-import { ForgotPassword } from "./Pages/ForgotPassword";
+import {ForgotPassword} from "./Pages/ForgotPassword";
 
 
 
