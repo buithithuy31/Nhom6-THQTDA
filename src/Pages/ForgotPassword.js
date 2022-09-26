@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 
-export const Register = () => {
+export const ForgotPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -11,46 +11,35 @@ export const Register = () => {
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
           <h3 className="text-center py-3 heading fw-bold py-3 my-0 pt-5">
-            Register
+            A phone number verification
           </h3>
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label>FullName</Form.Label>
-              <Form.Control placeholder="Full Name" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control placeholder="Phone" />
-            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control placeholder="Enter email" />
             </Form.Group>
-            <Form.Group className="mb-3">
+            {/* <Form.Group className="mb-3">
               <Form.Label>Username</Form.Label>
               <Form.Control placeholder="Username" />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control placeholder="Enter password" />
-            </Form.Group>
+            </Form.Group> */}
+            <Row className="py-3 text-center" style={{ fontSize: "14px" }}>
+              <Link
+                className="text-decoration-none text-primary ms-2 fw-bold"
+                to={"/login"}
+              >
+                Back to Login
+              </Link>
+            </Row>
             <div className="d-grid">
-              <Button type="submit" class="btn" variant="dark">
-                Register
+              <Button type="submit" className="btn" variant="dark">
+                Continue
               </Button>
             </div>
           </Form>
-        </Col>
-      </Row>
-      <Row className="py-3 text-center" style={{ fontSize: "14px" }}>
-        <Col>
-          Forgot Password?
-          <Link
-            className="text-decoration-none text-primary ms-2 fw-bold"
-            to={"/login"}
-          >
-            Login
-          </Link>
         </Col>
       </Row>
     </Container>

@@ -16,14 +16,14 @@ export const Login = () => {
           <Form onSubmit={handleSubmit}>
             <Form.Group className='mb-3'>
               <Form.Label>Username</Form.Label>
-              <Form.Control placeholder='Enter email' />
+              <Form.Control placeholder='User name' />
             </Form.Group>
             <Form.Group className='mb-3'>
               <Form.Label>Password</Form.Label>
               <Form.Control placeholder='Enter password' />
             </Form.Group>
             <div className='d-grid'>
-              <Button type='submit' class='btn' variant='dark'>
+              <Button type='submit' class='btn btn-primary' variant='dark'>
                 Login
               </Button>
             </div>
@@ -32,7 +32,9 @@ export const Login = () => {
       </Row>
       <Row className='py-3 text-center' style={{ fontSize: '14px' }}>
         <Col>
-          Forgot Password?
+        <Link className='' to={'/forgot'}>Forgot Password?</Link>
+          
+
           <Link
             className='text-decoration-none text-primary ms-2 fw-bold'
             to={'/register'}

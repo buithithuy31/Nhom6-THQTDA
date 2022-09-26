@@ -3,6 +3,10 @@ import Product from '../Components/Product'
 
 export default function HomePage() {
   return (
-    <Product/>
+    <>
+        <Product/>
+        <h3></h3>
+    </>
+
   )
 }
