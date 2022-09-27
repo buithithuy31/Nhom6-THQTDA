@@ -1,93 +1,192 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router'
-import { NavLink } from 'react-router-dom'
-import Skeleton from 'react-loading-skeleton'
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
-import  cartActions  from '../redux/reducer/cartActions'
+import BrandFilter from '../Components/BrandFilter';
+import CategoryFilter from '../Components/CategoryFilter';
 
-const ProductPage = () => {
-  const { id } = useParams()
-  const [product, setProduct] = useState({})
-  const [loading, setLoading] = useState(false)
 
-  const dispatch = useDispatch()
-  const addProduct = product => {
-    dispatch(cartActions.addCart(product))
+import getItems from '../utils/getItems';
+
+
+const MainNav = styled.div`
+  font-size: 14px;
+  background-color: #f4f4f4;
+  padding: 16px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  span {
+    color: #999;
+  }
+`;
+
+const Div = styled.div`
+  flex: 1;
+  display: flex;
+
+  .aside {
+    width: 300px;
+    padding: 16px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .main {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .top {
+      display: flex;
+
+      .title {
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: auto;
+      }
+    }
+
+    .clothes {
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .main {
+      .clothes {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main {
+      .clothes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      .top {
+        align-items: center;
+
+        .sort-filter {
+          display: flex;
+        }
+      }
+
+      .clothes {
+        margin-bottom: 0;
+      }
+    }
+  }
+`;
+
+const Products = ({ clothes, brands, categories }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const filteredBrands = useSelector((state) => state.filter.brands);
+  const filteredCategories = useSelector((state) => state.filter.categories);
+  const filteredSort = useSelector((state) => state.filter.sort);
+
+  let filteredClothes;
+
+  filteredClothes =
+    filteredBrands.length > 0
+      ? [...clothes].filter((value) => filteredBrands.includes(value.brand))
+      : [...clothes];
+
+  filteredClothes =
+    filteredCategories.length > 0
+      ? filteredClothes.filter((value) =>
+          filteredCategories.includes(value.category)
+        )
+      : filteredClothes;
+
+  if (filteredSort === 'price_high_to_low') {
+    filteredClothes = filteredClothes.sort((a, b) => +b.amount - +a.amount);
+  } else if (filteredSort === 'price_low_to_high') {
+    filteredClothes = filteredClothes.sort((a, b) => +a.amount - +b.amount);
   }
 
   useEffect(() => {
-    const getProduct = async () => {
-      setLoading(true)
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-      setProduct(await response.json())
-      setLoading(false)
-    }
-    getProduct()
-  }, [id])
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
 
-  const Loading = () => {
-    return (
-      <>
-        <div className='col-md-6'>
-          <Skeleton height={400} />
-        </div>
-        <div className='col-md-6' style={{ lineHeight: 2 }}>
-          <Skeleton height={50} width={300} />
-          <Skeleton height={75} />
-          <Skeleton height={25} width={150} />
-          <Skeleton height={50} />
-          <Skeleton height={150} />
-          <Skeleton height={50} width={100} />
-          <Skeleton height={50} width={100} style={{ marginLeft: 6 }} />
-        </div>
-      </>
-    )
-  }
-
-  const ShowProduct = () => {
-    return (
-      <>
-        <div className='col-md-6'>
-          <img
-            src={product.image}
-            alt={product.title}
-            height='400px'
-            width='400px'
-          />
-        </div>
-        <div className='col-md-6'>
-          <h4 className='text-uppercase text-black-50'>{product.category}</h4>
-          <h1 className='display-5'>{product.title}</h1>
-          <p className='lead fw-bolder'>
-            Rating {product.rating && product.rating.rate}
-            <i className='fa fa-star'></i>
-          </p>
-          <h3 className='display-6 fw-bold my-4'>$ {product.price}</h3>
-          <p className='lead'>{product.description}</p>
-          <button
-            className='btn btn-outline-dark px-4 py-2'
-            onClick={() => addProduct(product)}
-          >
-            Add to Cart
-          </button>
-          <NavLink to='/cart' className='btn btn-dark ms-2 px-3 py-2'>
-            Go to Cart
-          </NavLink>
-        </div>
-      </>
-    )
-  }
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
 
   return (
-    <div>
-      <div className='container py-5'>
-        <div className='row py-4'>
-          {loading ? <Loading /> : <ShowProduct />}
-        </div>
-      </div>
-    </div>
-  )
-}
+    <>
+      <Head>
+        <title>Collections</title>
+      </Head>
+      <MainNav>
+        <Link href="/">Home</Link> / <span>Collections</span>
+      </MainNav>
+      <Div>
+        {width > 640 && (
+          <aside className="aside">
+            <div className="title">Filters</div>
+            <BrandFilter items={brands} />
+            <CategoryFilter items={categories} />
+          </aside>
+        )}
+        <main className="main">
+          <div className="top">
+            <div className="title">Collections</div>
+            
+          </div>
+          
+        </main>
+      </Div>
+    </>
+  );
+};
 
-export default ProductPage
+export const getStaticProps = (context) => {
+  const items = getItems();
+
+  const brands = items.reduce((previous, current) => {
+    if (!previous.includes(current.brand)) {
+      previous.push(current.brand);
+    }
+
+    return previous;
+  }, []);
+
+  const categories = items.reduce((previous, current) => {
+    if (!previous.includes(current.category)) {
+      previous.push(current.category);
+    }
+
+    return previous;
+  }, []);
+
+  return {
+    props: {
+      clothes: items,
+      brands,
+      categories,
+    },
+  };
+};
+
+export default Products;

@@ -2,13 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { FaOpencart, FaRegUser } from "react-icons/fa";
+// import { FaOpencart, FaRegUser } from "react-icons/fa";
+import {CartIcon, LogoIcon, UserIcon} from '../assets/icons'
 
 export default function Header() {
   return (
     <header>
       <Navbar
-        bg="primary"
+        bg="secondary"
         expand="lg"
         variant="dark"
         collapseOnSelect
@@ -19,11 +20,7 @@ export default function Header() {
         <Container>
           <Navbar.Brand className="fw-bold">
             <Nav.Link as={NavLink} to="/">
-              <img
-                height="50"
-                width="50"
-                src="https://image.shutterstock.com/shutterstock/photos/1150233074/display_1500/stock-vector-second-hand-shop-template-for-logo-1150233074.jpg"
-              />
+            <LogoIcon/>
             </Nav.Link>
           </Navbar.Brand>
           <Navbar.Brand className="fw-bold">
@@ -45,6 +42,7 @@ export default function Header() {
                   Contact
                 </Nav.Link>
               </div>
+              <Navbar.Brand>
               <div>
                 <form class="d-flex" role="search">
                   <input
@@ -53,21 +51,28 @@ export default function Header() {
                     placeholder="Search"
                     aria-label="Search"
                   ></input>
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
+                  <button
+                    id="search-button"
+                    type="button"
+                    className="btn btn-primary"
+                  >
+                    <i class="fa fa-search"></i>
                   </button>
+                  {/* <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button> */}
                 </form>
               </div>
+              </Navbar.Brand>
               <div className="d-flex">
-                <Navbar.Brand className="fw-bold" >
                   <Nav.Link className="text-light" as={NavLink} to="/cart">
-                    <FaOpencart />
+                    {/* <FaOpencart /> */}
+                    <CartIcon/>
                   </Nav.Link>
-                </Navbar.Brand>
 
                 <Nav.Link as={NavLink} to="/login">
                   <div className="text-md">
-                    <FaRegUser />
+                    <UserIcon />
                   </div>
                 </Nav.Link>
 

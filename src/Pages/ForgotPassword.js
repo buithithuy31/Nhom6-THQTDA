@@ -18,17 +18,9 @@ export const ForgotPassword = () => {
               <Form.Label>Email</Form.Label>
               <Form.Control placeholder="Enter email" />
             </Form.Group>
-            {/* <Form.Group className="mb-3">
-              <Form.Label>Username</Form.Label>
-              <Form.Control placeholder="Username" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control placeholder="Enter password" />
-            </Form.Group> */}
             <Row className="py-3 text-center" style={{ fontSize: "14px" }}>
               <Link
-                className="text-decoration-none text-primary ms-2 fw-bold"
+                className="text-decoration-none text-primary ms-2p-2 bd-highlight"
                 to={"/login"}
               >
                 Back to Login
