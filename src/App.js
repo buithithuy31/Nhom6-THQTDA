@@ -8,7 +8,8 @@ import Header from "./Components/Header";
 // import "react-loading-skeleton/dist/skeleton.css";
 import "react-loading-skeleton"
 import Contact from "./Pages/Contact/contact";
-
+import Cart from "./Pages/Cart";
+import {ForgotPassword} from "./Pages/ForgotPassword";
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot" element={<ForgotPassword/>}/>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart/>} />
         </Routes>
       </Container>
       
