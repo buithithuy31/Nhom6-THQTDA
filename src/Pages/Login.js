@@ -58,12 +58,12 @@ export const Login = () => {
     <Container onSubmit={handleSubmit} component="main" maxWidth="xs">
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <h3 className="text-center py-3 heading fw-bold py-3 my-0 pt-5">
-            Login
-          </h3>
+          <h3 className='text-center py-3 heading fw-bold py-3 my-0 pt-5'>
+            login
+            </h3>
           <Form
             onSubmit={handleSubmit}
-            component="form"
+            component="forms"
             autoComplete={"off"}
             noValidate
             sx={{ mt: 1 }}

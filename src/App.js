@@ -7,6 +7,7 @@ import {Register} from "./Pages/Register";
 import Header from "./Components/Header";
 // import "react-loading-skeleton/dist/skeleton.css";
 import "react-loading-skeleton"
+// import Contact from "./Pages/Contact/contact";
 import Contact from "./Pages/Contact/contact";
 import Cart from "./Pages/Cart";
 import {ForgotPassword} from "./Pages/ForgotPassword";

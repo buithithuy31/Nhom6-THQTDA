@@ -75,12 +75,12 @@ export const Register = () => {
     <Container onSubmit={handleSubmit} component="main" maxWidth="xs">
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <h3 className="text-center py-3 heading fw-bold py-3 my-0 pt-5">
+          <p className="text-center py-3 heading fw-bold py-3 my-0 pt-5">
             Register
-          </h3>
+          </p>
           <Form
             onSubmit={handleSubmit}
-            component="form"
+            component="forms"
             autoComplete={"off"}
             noValidate
             sx={{ mt: 1 }}
