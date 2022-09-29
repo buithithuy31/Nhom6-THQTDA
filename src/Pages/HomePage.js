@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Form, Nav, Navbar, NavLink } from "react-bootstrap";
 import Product from "../Components/Product";
 
+import '../App.css'
 export default function HomePage() {
   return (
     // <Container>

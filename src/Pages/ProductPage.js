@@ -6,9 +6,9 @@ import styled from 'styled-components';
 
 import BrandFilter from '../Components/BrandFilter';
 import CategoryFilter from '../Components/CategoryFilter';
+import { Nav } from 'react-bootstrap';
 
-
-import getItems from '../utils/getItems';
+import getItems from '../utils/GetItems';
 
 
 const MainNav = styled.div`
@@ -100,53 +100,22 @@ const Div = styled.div`
 
 const Products = ({ clothes, brands, categories }) => {
   const [width, setWidth] = useState(window.innerWidth);
-  const filteredBrands = useSelector((state) => state.filter.brands);
-  const filteredCategories = useSelector((state) => state.filter.categories);
-  const filteredSort = useSelector((state) => state.filter.sort);
 
-  let filteredClothes;
 
-  filteredClothes =
-    filteredBrands.length > 0
-      ? [...clothes].filter((value) => filteredBrands.includes(value.brand))
-      : [...clothes];
 
-  filteredClothes =
-    filteredCategories.length > 0
-      ? filteredClothes.filter((value) =>
-          filteredCategories.includes(value.category)
-        )
-      : filteredClothes;
-
-  if (filteredSort === 'price_high_to_low') {
-    filteredClothes = filteredClothes.sort((a, b) => +b.amount - +a.amount);
-  } else if (filteredSort === 'price_low_to_high') {
-    filteredClothes = filteredClothes.sort((a, b) => +a.amount - +b.amount);
-  }
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
 
   return (
     <>
-      <Head>
-        <title>Collections</title>
-      </Head>
+
       <MainNav>
-        <Link href="/">Home</Link> / <span>Collections</span>
+        {/* <Nav.Link href="/">###</Nav.Link> / <span>###</span> */}
+        <span>Collections</span>
       </MainNav>
       <Div>
         {width > 640 && (
           <aside className="aside">
             <div className="title">Filters</div>
-            <BrandFilter items={brands} />
-            <CategoryFilter items={categories} />
+            
           </aside>
         )}
         <main className="main">
@@ -155,6 +124,10 @@ const Products = ({ clothes, brands, categories }) => {
             
           </div>
           
+            <div className="clothes">
+              
+            </div>
+
         </main>
       </Div>
     </>
