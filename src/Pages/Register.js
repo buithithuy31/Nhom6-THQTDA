@@ -230,7 +230,7 @@ export const Register = () => {
       </Row>
       <Row className="py-3 text-center" style={{ fontSize: "14px" }}>
         <Col>
-          Forgot Password?
+          
           <Link
             className="text-decoration-none text-primary ms-2 fw-bold"
             to={"/login"}
