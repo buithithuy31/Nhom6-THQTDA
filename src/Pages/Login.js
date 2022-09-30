@@ -124,7 +124,7 @@ export const Login = () => {
             </Form.Group>
             <div className="d-grid">
             <Link className="text" to={"/forgot"}>Forgot Password?</Link>
-              <Button type="submit" class="btn btn-primary" variant="dark">
+              <Button type="submit" className="btn btn-primary" variant="dark">
                 Login
               </Button>
             </div>
@@ -144,7 +144,7 @@ export const Login = () => {
         </Col>
       </Row>
       {flag && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           This is a danger alert—check it out!
         </div>
       )}

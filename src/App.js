@@ -1,3 +1,4 @@
+import React from "react";
 import HomePage from "./Pages/HomePage";
 import ProductPage from "./Pages/ProductPage";
 import {Login} from './Pages/Login'
@@ -14,6 +15,7 @@ import {ForgotPassword} from "./Pages/ForgotPassword";
 import RequestLogin from "./Pages/RequestLogin";
 
 import "./App.css";
+
 import Product from "./Components/Product";
 
 function App() {
@@ -23,18 +25,22 @@ function App() {
     {/* <Login/> */}
     </div>
       <Header/>
+      
       <Container fluid className="p-0" style={{ marginTop: "80px" }}>
+    
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/product" element={<ProductPage />} />
+          
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<ForgotPassword/>}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/sp" element={<Product/>}/>
+          <Route path="/sp" element={<Product/>}/> 
           {/* <Route path="/request" element={<RequestLogin/>} /> */}
           </Routes>
+
       </Container>
       
     </>

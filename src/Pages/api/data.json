@@ -2,7 +2,7 @@
 {
   "filter": [
     {"brand": ["American Eagle", "Hollister", "Pull & Bear", "Zara"]},
-    {"category": ["Hoodies", "Jeans", "Polos", "Shirts"]}
+    {"Category": ["Hoodies", "Jeans", "Polos", "Shirts"]}
   ],
   "clothes": [
     {

@@ -221,7 +221,7 @@ export const Register = () => {
               </div>
             </Form.Group>
             <div className="d-grid">
-              <Button type="submit" class="btn" variant="dark">
+              <Button type="submit" className="btn" variant="dark">
                 Register
               </Button>
             </div>
@@ -240,7 +240,7 @@ export const Register = () => {
         </Col>
       </Row>
       {flag && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           This is a danger alert—check it out!
         </div>
       )}
