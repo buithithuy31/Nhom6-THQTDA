@@ -16,7 +16,7 @@ import RequestLogin from "./Pages/RequestLogin";
 
 import "./App.css";
 
-import Product from "./Components/Product";
+import ProductDetail from "./Components/Product";
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword/>}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/sp" element={<Product/>}/> 
+          <Route path="/sp" element={<ProductDetail/>}/> 
           {/* <Route path="/request" element={<RequestLogin/>} /> */}
           </Routes>
 

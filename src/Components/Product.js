@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { child, get, ref, set } from "firebase/database";
 import { database } from "../firebase";
-import Link from "next/link";
-// import { CheckSignIn } from "../signin";
-// import { Store, UpdateNewUser } from "../_app";
-// import { RadioGroup, RadioButton } from "react-radio-buttons";
+
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import Breadcum from "../Components/Breadcum";
@@ -108,9 +105,6 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
             ))}
           </div>
           <div className="mt-5 ">
-            {/* <button className="p-3 pl-5 pr-5 mr-5 text-xl rounded-md border-2 border-cyan-500 hover:shadow-cyan-500/50">
-              Wishlist
-            </button> */}
             <button
               onClick={handleAddToCart}
               className="p-3 pl-5 pr-5 bg-blue-600 text-white text-xl rounded-md shadow-lg shadow-blue-500/50 hover:bg-blue-800"
@@ -155,4 +149,4 @@ export const getServerSideProps = (context) => {
     },
   };
 };
-export default Product;
+export default ProductDetail;
