@@ -53,7 +53,7 @@ const Filters = ({ changeProducts }) => {
 
   return (
     <div className="p-3 m-2 ml-5 min-w-[0px]">
-      {/* <h2 className="text-2xl">Filters</h2> */}
+      <h2 className="text-2xl">Filters</h2>
       {filters?.map((filter, index) => (
         <Filter key={index} filter={filter} changeProducts={changeProducts} />
       ))}

@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
-  const [width, setWidth] = useState(window.innerWidth);
   const [productsFilter, setProductFilter] = useState([]);
   useEffect(() => {
     get(query(child(ref(database), `clothes`), limitToLast(30)))
@@ -56,31 +55,9 @@ const ProductPage = () => {
     <div>
       <Breadcum />
       <div className="flex flex-row">
-        <div className="title">Filters</div>
-           <Filters changeProducts={handleChangeProducts} />
-        <div className="title">Collections</div>
-           <Collections {...{ productsFilter, sortProducts }} />
+        <Filters changeProducts={handleChangeProducts} />
+        <Collections {...{ productsFilter, sortProducts }} />
       </div>
-      {/* <div>
-        {width > 640 && (
-          <aside className="aside">
-            <div className="title">Filters</div>
-            <Filters changeProducts={handleChangeProducts} />
-
-          </aside>
-        )}
-        <main className="main">
-          <div className="top">
-            <div className="title">Collections</div>
-            <Collections {...{ productsFilter, sortProducts }} />
-          </div>
-
-            <div className="clothes">
-
-            </div>
-
-        </main>
-      </div> */}
     </div>
   );
 };

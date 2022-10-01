@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { child, get, ref, set } from "firebase/database";
 import { database } from "../firebase";
-
+import Link from "next/link";
+// import { CheckSignIn } from "../signin";
+import { Store } from "../App";
+// import { RadioGroup, RadioButton } from "react-radio-buttons";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import Breadcum from "../Components/Breadcum";
+import Breadcum from "./Breadcum";
 
 const RadioButton = ({ value, handleActiveSize, actived }) => {
   return (
@@ -22,7 +25,7 @@ const RadioButton = ({ value, handleActiveSize, actived }) => {
 const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
   const [valueSize, setValueSize] = useState(null);
   const router = useRouter();
-  const { user, SignInUser } = useContext();
+  const { user, SignInUser } = useContext(Store);
 
   const handleActiveSize = (size) => {
     setValueSize(size);
@@ -74,7 +77,7 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
         toast.error("Thêm không thành công", { position: "top-center" });
       }
     } else {
-      router.push(`/signin/?url=collections/${id}`);
+      router.push(`/signin/?url=product/${id}`);
     }
   };
   return (
@@ -82,9 +85,10 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
       <div className="flex flex-row ">
         <div className="min-h-[250px] max-w-[400px] overflow-hidden">
           <img
-            width="100%"
-            height="100%"
             src={imageURL}
+            width={330}
+            height={412}
+            layout="responsive"
             alt="hinh anh"
             className="hover:scale-105 transition"
           />
@@ -105,6 +109,9 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
             ))}
           </div>
           <div className="mt-5 ">
+            {/* <button className="p-3 pl-5 pr-5 mr-5 text-xl rounded-md border-2 border-cyan-500 hover:shadow-cyan-500/50">
+              Wishlist
+            </button> */}
             <button
               onClick={handleAddToCart}
               className="p-3 pl-5 pr-5 bg-blue-600 text-white text-xl rounded-md shadow-lg shadow-blue-500/50 hover:bg-blue-800"
@@ -117,7 +124,7 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
     </div>
   );
 };
-export const Product = ({ cid }) => {
+export const Cid = ({ cid }) => {
   const [productDetail, setProductDetail] = useState(null);
   const router = useRouter();
 
@@ -149,4 +156,4 @@ export const getServerSideProps = (context) => {
     },
   };
 };
-export default ProductDetail;
+export default Cid;
