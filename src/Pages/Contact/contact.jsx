@@ -33,7 +33,7 @@ function Contact(props) {
                         <h2>Email</h2>
                         <h3>buithithuy0307@gmail.com</h3>
                         <div className='contact__option-link'>
-                        <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox">Send a message</a>
+                        <a href="https://mail.google.com/mail">Send a message</a>
                         </div>
                     </div>
                     <div className='contact__option'>
@@ -54,7 +54,7 @@ function Contact(props) {
                     </div>
                 </div>
                 <form ref={form} onSubmit={sendEmail}>
-                    <input className='form__input' type="text" name='name' placeholder='Your Full Nam' required />
+                    <input className='form__input' type="text" name='name' placeholder='Your Full Name' required />
                     <input className='form__input' type="email" name='email' placeholder='Email' required />
                     <textarea name="message"  rows="7" placeholder='Message' required></textarea>
                     <button type='submit' className='button'>Send Message</button>
