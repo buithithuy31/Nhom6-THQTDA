@@ -58,12 +58,12 @@ export const Login = () => {
     <Container onSubmit={handleSubmit} component="main" maxWidth="xs">
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <h3 className="text-center py-3 heading fw-bold py-3 my-0 pt-5">
-            Login
-          </h3>
+          <h3 className='text-center py-3 heading fw-bold py-3 my-0 pt-5'>
+            login
+            </h3>
           <Form
             onSubmit={handleSubmit}
-            component="form"
+            component="forms"
             autoComplete={"off"}
             noValidate
             sx={{ mt: 1 }}
@@ -124,7 +124,7 @@ export const Login = () => {
             </Form.Group>
             <div className="d-grid">
             <Link className="text" to={"/forgot"}>Forgot Password?</Link>
-              <Button type="submit" class="btn btn-primary" variant="dark">
+              <Button type="submit" className="btn btn-primary" variant="dark">
                 Login
               </Button>
             </div>
@@ -144,7 +144,7 @@ export const Login = () => {
         </Col>
       </Row>
       {flag && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           This is a danger alert—check it out!
         </div>
       )}

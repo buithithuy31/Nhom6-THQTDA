@@ -5,6 +5,13 @@ import { NavLink } from "react-router-dom";
 // import { FaOpencart, FaRegUser } from "react-icons/fa";
 import {CartIcon, LogoIcon, UserIcon} from '../assets/icons'
 
+
+const options = [
+  { value: "profile", label: "Profile" },
+  { value: "logOut", label: "Log out" },
+];
+
+
 export default function Header() {
   return (
     <header>

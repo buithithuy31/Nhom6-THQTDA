@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Form, Nav, Navbar } from "react-bootstrap";
+import { Container, Form, Nav, Navbar, NavLink } from "react-bootstrap";
 import Product from "../Components/Product";
 
+import '../App.css'
 export default function HomePage() {
   return (
     // <Container>
@@ -21,7 +22,7 @@ export default function HomePage() {
       <div className=" items-center justify-center">
         <h1 className="text-center ">Wear better, look better.</h1>
         <p className="text-center">Don't you just love being in apparel?</p>
-        <Nav.Link className="text-center" href="/product">
+        <Nav.Link className="text-center" as={NavLink} href="/product">
           <button className="btn btn-outline-success">Shop Now</button>
         </Nav.Link>
       </div>

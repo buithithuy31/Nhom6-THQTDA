@@ -1,0 +1,57 @@
+/* border: 1px #eee solid;
+font-size: 14px; */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.info {
+  padding: 8px;
+}
+  .brand {
+    font-weight: 500;
+  }
+
+  .name {
+    color: #777;
+    margin: 8px 0;
+  }
+
+  .amount {
+    font-weight: 500;
+  }
+.Sortby{
+  color: inherit;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.main{
+width: 100%;
+padding: 16px;
+display: flex;
+flex-direction: column;
+}
+.top {
+  display: flex;
+  position: absolute;
+  right: 6px;
+  border: 3px;
+  padding: 10px;
+  float: right;
+}
+.title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: auto;
+  }
+
+
+      

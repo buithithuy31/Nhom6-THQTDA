@@ -1,0 +1,10 @@
+.home {
+    position: relative;
+    /* height: 100vh; */
+    /* left: 230px; */
+    /* width: calc(100% - 230px);
+    height: calc(100% + 80px); */
+    /* background: var(--body-color); */
+    transition: var(--tran-05);
+    margin-top: 300px;
+}

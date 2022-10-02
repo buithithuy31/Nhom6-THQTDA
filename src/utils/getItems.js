@@ -21,8 +21,8 @@ const shuffle = (array) => {
   return array;
 };
 
-const getItems = () => {
+const GetItems = () => {
   return shuffle(data.clothes);
 };
 
-export default getItems;
+export default GetItems;
