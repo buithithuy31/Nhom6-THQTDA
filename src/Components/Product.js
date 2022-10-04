@@ -15,7 +15,7 @@ const RadioButton = ({ value, handleActiveSize, actived }) => {
       onClick={() => handleActiveSize(value)}
       className={`mr-3 border-2 border-neutral-300 rounded-full w-14 h-14 leading-[3.5rem] text-center 
     font-bold cursor-pointer hover:border-teal-400 ${
-      actived == value && "!border-teal-400"
+      actived === value && "!border-teal-400"
     }`}
     >
       {value}
@@ -38,16 +38,16 @@ const ProductDetail = ({ id, brand, amount, name, imageURL }) => {
       const accountList = ref(database, `account/${user.userId}`);
       child(accountList, user?.userId);
       const productIndex = user.carts?.findIndex(
-        (cart) => cart?.productId == id
+        (cart) => cart?.productId === id
       );
       let updateUser = null;
-      if (productIndex != undefined && productIndex != -1) {
+      if (productIndex !== undefined && productIndex !== -1) {
         const product = user.carts[productIndex];
         const productSize = product?.size || [];
         const indexSize = productSize.findIndex(
           (subSize) => subSize.name === valueSize
         );
-        if (indexSize != -1) {
+        if (indexSize !== -1) {
           const size = productSize[indexSize];
           productSize[indexSize] = { ...size, quantity: size.quantity + 1 };
         } else {

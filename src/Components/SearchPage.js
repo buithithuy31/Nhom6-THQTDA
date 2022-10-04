@@ -33,7 +33,6 @@ function SearchPage(props) {
     value={searchItem}
     onChange={handleSearchChage}
     >
-
     </form>
   );
 }
