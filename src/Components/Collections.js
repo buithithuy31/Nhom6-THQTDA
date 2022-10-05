@@ -17,7 +17,7 @@ const Product = ({ id, brand, amount, name, imageURL, setPriority }) => {
           <img
             src={imageURL}
             width={220}
-            height={275}
+            height={275}  
             layout="responsive"
             priority={setPriority}
             className="group-hover:scale-105 transition object-cover"
