@@ -26,8 +26,8 @@
             text-align: center;
             color: white;
             &:hover {
-                cursor: pointer;
-                background-color: blue;
+                
+                background-color: rgb(0, 81, 255);
             }
             .contact__option-icon {
                 font-size: 1.7rem;
@@ -47,6 +47,10 @@
                     text-decoration: none;
                     color: rgb(23, 219, 206);
                     font-size: 0.9rem;
+                    
+                    &:hover {
+                        color: white;
+                    }
                 }
             }
         }
@@ -89,12 +93,14 @@ form {
         padding: 10px 20px;
         color: white;
         border-radius: 5px;
-        background-color: rgb(23, 219, 206);
+        background-color: rgb(0, 81, 255);
         margin-top: 30px;
 
         &:hover {
             cursor: pointer;
+            color: white;
             opacity: 0.8;
+            // background-color: rgb(0, 81, 255);
         }
     }
 }

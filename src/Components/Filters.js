@@ -15,14 +15,14 @@ const Filter = ({ filter, changeProducts }) => {
       valueSelected = [...(checkbox.state || []), value];
       changeProducts(valueSelected);
     } else {
-      valueSelected = checkbox.state.filter((item) => item != value);
+      valueSelected = checkbox.state.filter((item) => item !== value);
     }
     checkbox.setState(valueSelected);
     changeProducts(valueSelected);
   };
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 ">
       <h2 className="text-xl capitalize mb-3">{key}</h2>
       {arr.map((item, index) => (
         <div className="text-lg" key={index}>
