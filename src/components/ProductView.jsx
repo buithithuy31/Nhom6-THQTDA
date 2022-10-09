@@ -56,12 +56,12 @@ const ProductView = (props) => {
 
   const check = () => {
     if (color === undefined) {
-      alert("Vui lòng chọn màu sắc!");
+      alert("Please select the color!");
       return false;
     }
 
     if (size === undefined) {
-      alert("Vui lòng chọn kích cỡ!");
+      alert("Please select the size!");
       return false;
     }
 

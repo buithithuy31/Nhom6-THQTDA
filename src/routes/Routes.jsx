@@ -10,6 +10,7 @@ import Product from '../pages/Product'
 import ContactPage from '../pages/Contact'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/Register'
+import Search from '../components/Search'
 const Routes = () => {
     return (
         <Switch>
@@ -20,6 +21,7 @@ const Routes = () => {
             <Route path='/contact' component={ContactPage}/>
             <Route path='/login' component={LoginPage}/>
             <Route path='/register' component={RegisterPage}/>
+            <Route path='/search' component={Search} />
         </Switch>
     )
 }
