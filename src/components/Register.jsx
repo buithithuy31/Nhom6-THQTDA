@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LoginPage from "../pages/LoginPage";
 import Forms from "../redux/Form";
 
-export const Register = () => {
+export function Register() {
   const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const [validate, setValidate] = useState({});
   const [flag, setFlag] = useState(false);
+  const [login, setLogin] = useState(true);
+  const [info, setInfo] = useState(true);
 
   const validateRegister = () => {
     let isValid = true;
@@ -51,13 +55,21 @@ export const Register = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  function handleRegister (e) {
     e.preventDefault();
 
     if (!fullname || !phone || !email || !username || !password) {
       setFlag(true);
     } else {
       setFlag(false);
+      localStorage.setItem("hardikSubmissionEmail", JSON.stringify(username));
+      localStorage.setItem(
+        "hardikSubmissionPassword",
+        JSON.stringify(password)
+      );
+      console.log("Saved in Local Storage");
+
+      setLogin(!login);
     }
     const validate = validateRegister();
 
@@ -70,85 +82,212 @@ export const Register = () => {
       setPassword("");
     }
   };
+  function handleClick() {
+    setLogin(!login);
+  }
+
+  // Company Info
+  function infoClick() {
+    setInfo(!info);
+  }
   return (
-    <div className="login">
-      <div className="inner-form">
-        <h1>Register</h1>
-        <div className="form-group">
-          <label htmlFor="fullname" className="label">
-            Full name
-          </label>
-          <input
-            type="text"
-            id="fullname"
-            className="ls-input"
-            placeholder="Eg: Nguyen Van A"
-            value={fullname}
-            onChange={(e) => (e)}
-          />
+    <div>
+    <div className="login" onClick={infoClick}>
+      {info ? (
+      <div>
+        {" "}
+        {login ? (
+        <div
+          className="inner-form"
+          onSubmit={handleRegister}
+          autoComplete={"off"}
+          noValidate
+          
+        >
+          <h1>Register</h1>
+          <div className="form-group">
+            <label htmlFor="fullname" className="label">
+              Full name
+            </label>
+            <input
+              margin="normal"
+              className={`ls-input ${
+                validate.validate && validate.validate.username
+                  ? "is-invalid "
+                  : ""
+              }`}
+              required
+              fullWidth
+              id="fullname"
+              label="Full name"
+              name="fullname"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+            />
+            <div
+              className={`invalid-feedback text-start ${
+                validate.validate && validate.validate.fullname
+                  ? "d-block"
+                  : "d-none"
+              }`}
+            >
+              {validate.validate && validate.validate.fullname
+                ? validate.validate.fullname[0]
+                : ""}
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone" className="label">
+              Phone
+            </label>
+            <input
+              margin="normal"
+              className={`ls-input ${
+                validate.validate && validate.validate.phone
+                  ? "is-invalid "
+                  : ""
+              }`}
+              required
+              fullWidth
+              name="phone"
+              label="Phone"
+              type="phone"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <div
+              className={`invalid-feedback text-start ${
+                validate.validate && validate.validate.phone
+                  ? "d-block"
+                  : "d-none"
+              }`}
+            >
+              {validate.validate && validate.validate.phone
+                ? validate.validate.phone[0]
+                : ""}
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email" className="label">
+              Email
+            </label>
+            <input
+              margin="normal"
+              className={`ls-input ${
+                validate.validate && validate.validate.password
+                  ? "is-invalid "
+                  : ""
+              }`}
+              required
+              fullWidth
+              name="email"
+              label="Email"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div
+              className={`invalid-feedback text-start ${
+                validate.validate && validate.validate.email
+                  ? "d-block"
+                  : "d-none"
+              }`}
+            >
+              {validate.validate && validate.validate.emailm
+                ? validate.validate.email[0]
+                : ""}
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="username" className="label">
+              Username
+            </label>
+            <input
+              margin="normal"
+              className={`ls-input ${
+                validate.validate && validate.validate.username
+                  ? "is-invalid "
+                  : ""
+              }`}
+              required
+              fullWidth
+              id="username"
+              label="User name"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <div
+              className={`invalid-feedback text-start ${
+                validate.validate && validate.validate.username
+                  ? "d-block"
+                  : "d-none"
+              }`}
+            >
+              {validate.validate && validate.validate.username
+                ? validate.validate.username[0]
+                : ""}
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password" className="label">
+              Password
+            </label>
+            <input
+              margin="normal"
+              className={`ls-input ${
+                validate.validate && validate.validate.password
+                  ? "is-invalid "
+                  : ""
+              }`}
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div
+              className={`invalid-feedback text-start ${
+                validate.validate && validate.validate.password
+                  ? "d-block"
+                  : "d-none"
+              }`}
+            >
+              {validate.validate && validate.validate.password
+                ? validate.validate.password[0]
+                : ""}
+            </div>
+          </div>
+          <button type="submit" className="submit" variant="contained">
+            Register
+          </button>
+          <div className="signup-already">
+            <span>Already have an account ?</span>
+            <Link to="/login">
+              <a className="link" onClick={handleClick}>
+                Login
+              </a>
+            </Link>
+          </div>
+          {flag && (
+            <alert color="primary" variant="danger">
+              I got it you are in hurry! But every Field is important!
+            </alert>
+          )}
         </div>
-        <div className="form-group">
-          <label htmlFor="phone" className="label">
-            Phone
-          </label>
-          <input
-            type="text"
-            id="phone"
-            className="ls-input"
-            placeholder="Eg: "
-            value={fullname}
-            onChange={(e) => (e)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email" className="label">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="ls-input"
-            placeholder="Eg: anguyen@gmai.com"
-            value={email}
-            onChange={(e) => (e)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="username" className="label">
-            Username
-          </label>
-          <input
-            type="username"
-            id="username"
-            className="ls-input"
-            placeholder="Eg: thuy123"
-            value={email}
-            onChange={(e) => (e)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password" className="label">
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            className="ls-input"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => (e)}
-          />
-        </div>
-        <button onClick={() => handleSubmit()} type="submit" className="submit">
-          Register
-        </button>
-        <div className="signup-already">
-          <span>Already have an account ?</span>
-          <Link to="/login">
-            <a className="link">Login</a>
-          </Link>
-        </div>
+        ) : ( <LoginPage/>)
+          }
       </div>
+      ) :(
+        <div> </div>
+      )}
+    </div>
     </div>
   );
 };
