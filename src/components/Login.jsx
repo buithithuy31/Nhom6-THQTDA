@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Home from "../pages/Home";
 import Forms from "../redux/Form";
 
 export const Login = () => {
@@ -8,6 +9,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [validate, setValidate] = useState({});
   const [flag, setFlag] = useState(false);
+  const [home, setHome] = useState(true);
 
   const validateLogin = () => {
     let isValid = true;
@@ -37,10 +39,16 @@ export const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-    if ( !username || !password) {
+let pass = localStorage.getItem('hardikSubmissionPassword').replace(/"/g, "");
+let user = localStorage.getItem('hardikSubmissionEmail').replace(/"/g, "");
+    
+if ( !username || !password) {
       setFlag(true);
+      console.log("EMPTY");
+}else if ((password !== pass) || (username !== user)){
+  setFlag(false);
     } else {
+      setHome(!home);
       setFlag(false);
     }
     const validate = validateLogin();
@@ -52,6 +60,8 @@ export const Login = () => {
     }
   };
   return (
+    <div>
+      {home ?
     <div className="login" onSubmit={handleLogin} autoComplete={"off"} noValidate sx={{ mt: 1 }}>
       <div className="inner-form">
         <h1>Login</h1>
@@ -134,6 +144,9 @@ export const Login = () => {
               </alert>
             )}
       </div>
+    </div>
+    : <Home/>
+        }
     </div>
   );
 };
