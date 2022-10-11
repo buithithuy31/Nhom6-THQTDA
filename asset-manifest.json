@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Nhom6-THQTDACNTT/static/css/main.179910f2.chunk.css",
-    "main.js": "/Nhom6-THQTDACNTT/static/js/main.70ead450.chunk.js",
-    "main.js.map": "/Nhom6-THQTDACNTT/static/js/main.70ead450.chunk.js.map",
-    "runtime-main.js": "/Nhom6-THQTDACNTT/static/js/runtime-main.6a934ee9.js",
-    "runtime-main.js.map": "/Nhom6-THQTDACNTT/static/js/runtime-main.6a934ee9.js.map",
-    "static/js/2.73f1f01f.chunk.js": "/Nhom6-THQTDACNTT/static/js/2.73f1f01f.chunk.js",
-    "static/js/2.73f1f01f.chunk.js.map": "/Nhom6-THQTDACNTT/static/js/2.73f1f01f.chunk.js.map",
-    "static/js/3.1d0c2c80.chunk.js": "/Nhom6-THQTDACNTT/static/js/3.1d0c2c80.chunk.js",
-    "static/js/3.1d0c2c80.chunk.js.map": "/Nhom6-THQTDACNTT/static/js/3.1d0c2c80.chunk.js.map",
+    "main.css": "/Nhom6-THQTDACNTT/static/css/main.5fd3468a.chunk.css",
+    "main.js": "/Nhom6-THQTDACNTT/static/js/main.23bfccb3.chunk.js",
+    "main.js.map": "/Nhom6-THQTDACNTT/static/js/main.23bfccb3.chunk.js.map",
+    "runtime-main.js": "/Nhom6-THQTDACNTT/static/js/runtime-main.364f80cc.js",
+    "runtime-main.js.map": "/Nhom6-THQTDACNTT/static/js/runtime-main.364f80cc.js.map",
+    "static/js/2.5f3f79e5.chunk.js": "/Nhom6-THQTDACNTT/static/js/2.5f3f79e5.chunk.js",
+    "static/js/2.5f3f79e5.chunk.js.map": "/Nhom6-THQTDACNTT/static/js/2.5f3f79e5.chunk.js.map",
+    "static/js/3.44526fb8.chunk.js": "/Nhom6-THQTDACNTT/static/js/3.44526fb8.chunk.js",
+    "static/js/3.44526fb8.chunk.js.map": "/Nhom6-THQTDACNTT/static/js/3.44526fb8.chunk.js.map",
     "index.html": "/Nhom6-THQTDACNTT/index.html",
-    "static/css/main.179910f2.chunk.css.map": "/Nhom6-THQTDACNTT/static/css/main.179910f2.chunk.css.map",
-    "static/js/2.73f1f01f.chunk.js.LICENSE.txt": "/Nhom6-THQTDACNTT/static/js/2.73f1f01f.chunk.js.LICENSE.txt",
+    "static/css/main.5fd3468a.chunk.css.map": "/Nhom6-THQTDACNTT/static/css/main.5fd3468a.chunk.css.map",
+    "static/js/2.5f3f79e5.chunk.js.LICENSE.txt": "/Nhom6-THQTDACNTT/static/js/2.5f3f79e5.chunk.js.LICENSE.txt",
     "static/media/boxicons.min.css": "/Nhom6-THQTDACNTT/static/media/boxicons.cbd149c5.ttf",
     "static/media/logo1.b7dcd46e.png": "/Nhom6-THQTDACNTT/static/media/logo1.b7dcd46e.png",
     "static/media/product-01 (1).jpg": "/Nhom6-THQTDACNTT/static/media/product-01 (1).7badc1d8.jpg",
@@ -43,9 +43,9 @@
     "static/media/slide_3.png": "/Nhom6-THQTDACNTT/static/media/slide_3.6e2ad4f2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.6a934ee9.js",
-    "static/js/2.73f1f01f.chunk.js",
-    "static/css/main.179910f2.chunk.css",
-    "static/js/main.70ead450.chunk.js"
+    "static/js/runtime-main.364f80cc.js",
+    "static/js/2.5f3f79e5.chunk.js",
+    "static/css/main.5fd3468a.chunk.css",
+    "static/js/main.23bfccb3.chunk.js"
   ]
 }
