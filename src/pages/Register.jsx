@@ -1,7 +1,7 @@
 import React from "react";
 
 import Helmet from "../components/Helmet";
-import { Register } from "../components/Register";
+import Register  from "../components/Register";
 
 const RegisterPage = () => {
   return (

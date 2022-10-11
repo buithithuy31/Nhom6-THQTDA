@@ -11,6 +11,7 @@ import ContactPage from '../pages/Contact'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/Register'
 import Search from '../components/Search'
+import Orders from '../components/Orders'
 const Routes = () => {
     return (
         <Switch>
@@ -22,6 +23,7 @@ const Routes = () => {
             <Route path='/login' component={LoginPage}/>
             <Route path='/register' component={RegisterPage}/>
             <Route path='/search' component={Search} />
+            <Route path='/order' component={Orders}/>
         </Switch>
     )
 }

@@ -1,152 +1,79 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import "../sass/components/Login.scss";
 import Home from "../pages/Home";
-import Forms from "../redux/Form";
+import { Link } from "react-router-dom";
 
-export const Login = () => {
-  
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [validate, setValidate] = useState({});
+function Login() {
+  const [userlog, setUserlog] = useState(" ");
+  const [passwordlog, setPasswordlog] = useState(" ");
+
   const [flag, setFlag] = useState(false);
+
   const [home, setHome] = useState(true);
 
-  const validateLogin = () => {
-    let isValid = true;
-
-    let validator = Forms.validator({
-      username: {
-        value: username,
-        isRequired: true,
-        minLength: 4,
-      },
-      password: {
-        value: password,
-        isRequired: true,
-        minLength: 6,
-      },
-    });
-
-    if (validator !== null) {
-      setValidate({
-        validate: validator.errors,
-      });
-
-      isValid = false;
-    }
-    return isValid;
-  };
-
-  const handleLogin = async (e) => {
+  function handleLogin(e) {
     e.preventDefault();
-let pass = localStorage.getItem('hardikSubmissionPassword').replace(/"/g, "");
-let user = localStorage.getItem('hardikSubmissionEmail').replace(/"/g, "");
+    let pass = localStorage.getItem("sanskarPassword").replace(/"/g, "");
+    let user = localStorage.getItem("sanskaruser").replace(/"/g, "");
     
-if ( !username || !password) {
+
+    if (!userlog || !passwordlog) {
       setFlag(true);
       console.log("EMPTY");
-}else if ((password !== pass) || (username !== user)){
-  setFlag(false);
+    } else if (passwordlog !== pass || userlog !== user) {
+      setFlag(true);
     } else {
       setHome(!home);
       setFlag(false);
     }
-    const validate = validateLogin();
+  }
 
-    if (validate) {
-      setValidate({});
-      setUsername("");
-      setPassword("");
-    }
-  };
   return (
-    <div>
-      {home ?
-    <div className="login" onSubmit={handleLogin} autoComplete={"off"} noValidate sx={{ mt: 1 }}>
-      <div className="inner-form">
-        <h1>Login</h1>
-        
-        <div className="form-group">
-          <label htmlFor="username" className="label">
-            Username
-          </label>
-          <input
-            margin="normal"
-            className={`ls-input ${
-              validate.validate && validate.validate.username
-                ? "is-invalid "
-                : ""
-            }`}
-            required
-            fullWidth
-            id="username"
-            label="User name"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <div
-              className={`invalid-feedback text-start ${
-                validate.validate && validate.validate.username
-                  ? "d-block"
-                  : "d-none"
-              }`}
-            >
-              {validate.validate && validate.validate.username
-                ? validate.validate.username[0]
-                : ""}
+    <div className="form-lg">
+      {home ? (
+        <form onSubmit={handleLogin}>
+          <div className="inner-form">
+            <h3>LogIn</h3>
+            <div className="label">
+              <label>User Name</label>
+              <input
+                type="username"
+                className="ls-input"
+                placeholder="Enter User name"
+                onChange={(event) => setUserlog(event.target.value)}
+              />
             </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="password" className="label">
-            Password
-          </label>
-          <input
-            margin="normal"
-            className={`ls-input ${
-              validate.validate && validate.validate.password
-                ? "is-invalid "
-                : ""
-            }`}
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div
-              className={`invalid-feedback text-start ${
-                validate.validate && validate.validate.password
-                  ? "d-block"
-                  : "d-none"
-              }`}
-            >
-              {validate.validate && validate.validate.password
-                ? validate.validate.password[0]
-                : ""}
+
+            <div className="label">
+              <label>Password</label>
+              <input
+                type="password"
+                className="ls-input"
+                placeholder="Enter password"
+                onChange={(event) => setPasswordlog(event.target.value)}
+              />
             </div>
-        </div>
-        <button type="submit" className="submit" variant="contained">
-          Login
-        </button>
-        <div className="signup-already">
-          <span>Already have an account ?</span>
-          <Link to="/register">
-            <a className="link">Register</a>
-          </Link>
-        </div>
-        {flag && (
-              <alert color="primary" variant="danger">
-                I got it you are in hurry! But every Field is important!
-              </alert>
+
+            <button type="submit" className="submit">
+              Login
+            </button>
+            <div className="signup-already">
+              <span>do you have an account ?</span>
+              <Link to="/register">
+                <a className="link">Register</a>
+              </Link>
+            </div>
+            {flag && (
+              alert("Fill correct Info else keep trying.!")
             )}
-      </div>
-    </div>
-    : <Home/>
-        }
+          </div>
+        </form>
+      ) : (
+        <Home/>
+        
+      )}
     </div>
   );
-};
+}
+
+export default Login;

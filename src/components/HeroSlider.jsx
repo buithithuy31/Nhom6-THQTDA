@@ -43,7 +43,7 @@ const HeroSlider = props => {
                     <HeroSliderItem key={index} item={item} active={index === activeSlide}/>
                 ))
             }
-            {
+            {/* {
                 props.control ? (
                     <div className="hero-slider__control">
                         <div className="hero-slider__control__item" onClick={prevSlide}>
@@ -59,7 +59,7 @@ const HeroSlider = props => {
                         </div>
                     </div>
                 ) : null
-            }
+            } */}
         </div>
     )
 }
@@ -87,7 +87,7 @@ const HeroSliderItem = props => (
                         icon="bx bx-cart"
                         animate={true}
                     >
-                       See details
+                       View product
                     </Button>
                 </Link>
             </div>
