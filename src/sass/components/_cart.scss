@@ -110,3 +110,35 @@
         }
     }
 }
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+//   .container {
+//     background-color: #f2f2f2;
+//     padding: 5px 20px 15px 20px;
+//     border: 1px solid lightgrey;
+//     border-radius: 3px;
+//   }
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }

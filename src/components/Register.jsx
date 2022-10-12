@@ -42,11 +42,13 @@ function Register() {
               <div className="label">
                 <label>Name</label>
                 <input
-                  type="text"
+                  type="name"
                   className="ls-input"
                   placeholder="Enter Full Name"
-                  name="name"
+                  pattern="/^[a-zA-Z]+ [a-zA-Z]+$/"
+                  title="You have entered an invalid name address!"
                   onChange={(event) => setName(event.target.value)}
+                  required
                 />
               </div>
 
@@ -56,7 +58,10 @@ function Register() {
                   type="email"
                   className="ls-input"
                   placeholder="Enter email"
+                  pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/"
+                  title="You have entered an invalid email address!"
                   onChange={(event) => setEmail(event.target.value)}
+                  required
                 />
               </div>
               <div className="label">
@@ -65,7 +70,10 @@ function Register() {
                   type="Phone"
                   className="ls-input"
                   placeholder="Enter contact no"
+                  pattern="^\+{0,2}([\-\. ])?(\(?\d{0,3}\))?([\-\. ])?\(?\d{0,3}\)?([\-\. ])?\d{3}([\-\. ])?\d{4}"
+                  title="You have entered an invalid phone address!"
                   onChange={(event) => setPhone(event.target.value)}
+                  required
                 />
               </div>
               <div className="label">
@@ -74,7 +82,10 @@ function Register() {
                   type="username"
                   className="ls-input"
                   placeholder="Enter User name"
+                  // pattern="/^[a-zA-Z\-]+$/"
+                  title="Your first name is not valid. Only characters A-Z, a-z and '-' are  acceptable."
                   onChange={(event) => setUsername(event.target.value)}
+                  required
                 />
               </div>
               <div className="label">
@@ -84,6 +95,9 @@ function Register() {
                   className="ls-input"
                   placeholder="Enter password"
                   onChange={(event) => setPassword(event.target.value)}
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
+                  required
                 />
               </div>
 

@@ -40,7 +40,9 @@ function Login() {
                 type="username"
                 className="ls-input"
                 placeholder="Enter User name"
+                title="Your first name is not valid. Only characters A-Z, a-z and '-' are  acceptable."
                 onChange={(event) => setUserlog(event.target.value)}
+                required
               />
             </div>
 
@@ -50,15 +52,18 @@ function Login() {
                 type="password"
                 className="ls-input"
                 placeholder="Enter password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
                 onChange={(event) => setPasswordlog(event.target.value)}
-              />
+             required
+             />
             </div>
 
             <button type="submit" className="submit">
               Login
             </button>
             <div className="signup-already">
-              <span>do you have an account ?</span>
+              <span>Do you have an account ?</span>
               <Link to="/register">
                 <a className="link">Register</a>
               </Link>
