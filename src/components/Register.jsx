@@ -45,7 +45,7 @@ function Register() {
                   type="name"
                   className="ls-input"
                   placeholder="Enter Full Name"
-                  pattern="/^[a-zA-Z]+ [a-zA-Z]+$/"
+                  // pattern="/^[a-zA-Z]+ [a-zA-Z]+$/"
                   title="You have entered an invalid name address!"
                   onChange={(event) => setName(event.target.value)}
                   required
