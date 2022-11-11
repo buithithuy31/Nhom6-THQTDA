@@ -131,14 +131,6 @@ const ProductView = (props) => {
             className="product-description__content"
             dangerouslySetInnerHTML={{ __html: product.description }}
           ></div>
-          {/* <div className="product-description__toggle">
-            <Button
-              size="sm"
-              onClick={() => setDescriptionExpand(!descriptionExpand)}
-            >
-              {descriptionExpand ? "Thu gọn" : "Xem thêm"}
-            </Button>
-          </div> */}
         </div>
       </div>
       <div className="product__info">
@@ -217,14 +209,6 @@ const ProductView = (props) => {
           className="product-description__content"
           dangerouslySetInnerHTML={{ __html: product.description }}
         ></div>
-        {/* <div className="product-description__toggle">
-          <Button
-            size="sm"
-            onClick={() => setDescriptionExpand(!descriptionExpand)}
-          >
-            {descriptionExpand ? "Thu gọn" : "Xem thêm"}
-          </Button>
-        </div> */}
       </div>
     </div>
   );

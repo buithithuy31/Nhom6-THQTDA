@@ -1,0 +1,48 @@
+.susscess {
+    border: 2px solid rgba(165, 218, 202, 0.736);
+    width: 40%;
+    left: 400px;
+    
+    position: fixed;
+    // right: 30px;
+    top: 150px;
+    z-index: 111;
+    .susscess__header {
+        border-bottom: 1px solid rgba(165, 218, 202, 0.736);
+        // width: 120px;
+        height: 46px;
+    }
+    .susscess__header--title {
+        font-size: 1.1rem;
+        width: 60px;
+        color: #fff;
+        padding: 10px;
+        background-color: rgb(6, 199, 96);
+        line-height: 23px;
+    }
+    .active {
+         
+    }
+    .content {
+        .content__img {
+            display: flex;
+            margin: 15px auto;
+            font-size: 2.5rem;
+            // border: 1px solid rgb(6, 199, 96);
+            color: rgb(6, 199, 96);
+        }
+        .content__title {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .content__des {
+            display: flex;
+            justify-content: center;
+        
+            p {
+                margin: 5px 0 10px 0;
+            }
+        }
+    }
+}

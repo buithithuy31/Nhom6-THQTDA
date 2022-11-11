@@ -112,7 +112,6 @@ const Cart = () => {
                 <input type="checkbox" checked="checked" name="sameadr" />{" "}
                 Payment on deliveryg
               </label>
-              {/* <button type="submit" value="Continue to checkout" class="submit">ok</button> */}
             </form>
           </div>
         </div>
